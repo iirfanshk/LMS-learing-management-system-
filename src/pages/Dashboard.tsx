@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { CourseCard } from "@/components/CourseCard";
@@ -14,10 +14,9 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
 
-  if (!user) {
-    navigate("/login");
-    return null;
-  }
+  useEffect(() => {
+    if (!user) navigate("/login");
+  }, [user, navigate]);
 
   const enrolledCourses = useMemo(() =>
     courses.filter(c => enrollments.some(e => e.courseId === c.id)),
@@ -45,15 +44,14 @@ export default function Dashboard() {
     [search]
   );
 
-  // Simple streak calculation (mock)
   const streak = enrollments.length > 0 ? Math.min(enrollments.length * 2 + 1, 14) : 0;
+
+  if (!user) return null;
 
   return (
     <div className="min-h-screen">
       <Header />
       <div className="container mx-auto px-4 py-8 space-y-10">
-
-        {/* Welcome Banner */}
         <div className="glass-card-strong rounded-3xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <div>
             <h1 className="font-display font-bold text-2xl md:text-3xl text-foreground">
@@ -72,7 +70,6 @@ export default function Dashboard() {
           )}
         </div>
 
-        {/* Search */}
         <div className="relative max-w-2xl mx-auto">
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <Input
@@ -83,7 +80,6 @@ export default function Dashboard() {
           />
         </div>
 
-        {/* Learning Progress */}
         {inProgressCourses.length > 0 && (
           <section>
             <h2 className="font-display font-bold text-xl text-foreground mb-4">📊 Your Progress</h2>
@@ -98,7 +94,6 @@ export default function Dashboard() {
           </section>
         )}
 
-        {/* Enrolled Courses */}
         <section>
           <h2 className="font-display font-bold text-xl text-foreground mb-4">📚 My Courses</h2>
           {enrolledCourses.length === 0 ? (
@@ -114,7 +109,6 @@ export default function Dashboard() {
           )}
         </section>
 
-        {/* Completed Courses */}
         {completedCourses.length > 0 && (
           <section>
             <h2 className="font-display font-bold text-xl text-foreground mb-4">🏆 Completed</h2>
@@ -126,7 +120,6 @@ export default function Dashboard() {
           </section>
         )}
 
-        {/* Browse All */}
         <section>
           <h2 className="font-display font-bold text-xl text-foreground mb-4">🌐 Browse All Courses</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
