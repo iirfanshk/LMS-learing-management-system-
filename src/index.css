@@ -80,17 +80,17 @@
     @apply bg-white/85 backdrop-blur-2xl border border-white/40 shadow-xl;
   }
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(239 84% 67%), hsl(260 80% 65%));
+    background: linear-gradient(135deg, hsl(268 75% 55%), hsl(290 70% 55%));
   }
   .gradient-coral {
-    background: linear-gradient(135deg, hsl(12 90% 64%), hsl(25 90% 60%));
+    background: linear-gradient(135deg, hsl(24 95% 53%), hsl(35 95% 50%));
   }
   .gradient-amber {
-    background: linear-gradient(135deg, hsl(38 92% 60%), hsl(45 95% 55%));
+    background: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 95% 48%));
   }
   .text-gradient-primary {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(135deg, hsl(239 84% 67%), hsl(260 80% 65%));
+    background-image: linear-gradient(135deg, hsl(268 75% 55%), hsl(290 70% 55%));
   }
   .hover-lift {
     @apply transition-all duration-300;
