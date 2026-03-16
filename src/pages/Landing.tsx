@@ -14,9 +14,9 @@ export default function LandingPage() {
 
       {/* Hero */}
       <section className="relative overflow-hidden py-20 md:py-32">
-        <div className="absolute top-10 left-0 w-96 h-96 rounded-full opacity-20" style={{ background: "hsl(239, 84%, 80%)", filter: "blur(100px)" }} />
-        <div className="absolute bottom-10 right-0 w-80 h-80 rounded-full opacity-20" style={{ background: "hsl(12, 90%, 80%)", filter: "blur(100px)" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: "hsl(38, 92%, 70%)", filter: "blur(120px)" }} />
+        <div className="absolute top-10 left-0 w-96 h-96 rounded-full opacity-20" style={{ background: "hsl(268, 75%, 75%)", filter: "blur(100px)" }} />
+        <div className="absolute bottom-10 right-0 w-80 h-80 rounded-full opacity-20" style={{ background: "hsl(24, 95%, 75%)", filter: "blur(100px)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10" style={{ background: "hsl(290, 70%, 70%)", filter: "blur(120px)" }} />
 
         <div className="container mx-auto px-4 relative">
           <motion.div

@@ -31,8 +31,8 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
       {/* Decorative blobs */}
-      <div className="absolute top-20 left-10 w-72 h-72 rounded-full opacity-30" style={{ background: "hsl(239, 84%, 90%)", filter: "blur(80px)" }} />
-      <div className="absolute bottom-20 right-10 w-60 h-60 rounded-full opacity-30" style={{ background: "hsl(12, 90%, 90%)", filter: "blur(80px)" }} />
+      <div className="absolute top-20 left-10 w-72 h-72 rounded-full opacity-30" style={{ background: "hsl(268, 75%, 90%)", filter: "blur(80px)" }} />
+      <div className="absolute bottom-20 right-10 w-60 h-60 rounded-full opacity-30" style={{ background: "hsl(24, 95%, 90%)", filter: "blur(80px)" }} />
 
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
