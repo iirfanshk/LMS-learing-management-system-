@@ -2,9 +2,74 @@ import { MascotBubble } from "@/components/MascotBubble";
 import { Header } from "@/components/Header";
 import { useAuth } from "@/contexts/AuthContext";
 import { courses, getAllLessons } from "@/data/courses";
-import { useMemo } from "react";
+import { useMemo, useCallback } from "react";
 import { Award, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+function downloadCertificate(courseName: string, userName: string, certId: string) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1200;
+  canvas.height = 800;
+  const ctx = canvas.getContext("2d")!;
+
+  // Background
+  ctx.fillStyle = "#ffffff";
+  ctx.fillRect(0, 0, 1200, 800);
+
+  // Border
+  ctx.strokeStyle = "#7c3aed";
+  ctx.lineWidth = 8;
+  ctx.strokeRect(30, 30, 1140, 740);
+  ctx.strokeStyle = "#f97316";
+  ctx.lineWidth = 3;
+  ctx.strokeRect(45, 45, 1110, 710);
+
+  ctx.fillStyle = "#7c3aed";
+  ctx.fillRect(100, 80, 1000, 4);
+
+  ctx.fillStyle = "#7c3aed";
+  ctx.font = "bold 48px Georgia, serif";
+  ctx.textAlign = "center";
+  ctx.fillText("Certificate of Completion", 600, 160);
+
+  ctx.fillStyle = "#f97316";
+  ctx.fillRect(400, 180, 400, 3);
+
+  ctx.fillStyle = "#6b7280";
+  ctx.font = "20px Georgia, serif";
+  ctx.fillText("This is to certify that", 600, 260);
+
+  ctx.fillStyle = "#1f2937";
+  ctx.font = "bold 40px Georgia, serif";
+  ctx.fillText(userName, 600, 320);
+
+  ctx.fillStyle = "#7c3aed";
+  ctx.fillRect(300, 340, 600, 2);
+
+  ctx.fillStyle = "#6b7280";
+  ctx.font = "20px Georgia, serif";
+  ctx.fillText("has successfully completed the course", 600, 400);
+
+  ctx.fillStyle = "#1f2937";
+  ctx.font = "bold 32px Georgia, serif";
+  ctx.fillText(courseName, 600, 460);
+
+  ctx.fillStyle = "#6b7280";
+  ctx.font = "18px Georgia, serif";
+  ctx.fillText(`Date: ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}`, 600, 540);
+  ctx.fillText(`Certificate ID: ${certId}`, 600, 580);
+
+  ctx.font = "60px serif";
+  ctx.fillText("🏆", 600, 680);
+
+  ctx.fillStyle = "#7c3aed";
+  ctx.fillRect(100, 720, 1000, 4);
+
+  const link = document.createElement("a");
+  link.download = `certificate-${courseName.replace(/\s+/g, "-").toLowerCase()}.png`;
+  link.href = canvas.toDataURL("image/png");
+  link.click();
+}
 
 export default function CertificatesPage() {
   const { user, enrollments } = useAuth();
@@ -16,6 +81,12 @@ export default function CertificatesPage() {
       return e && e.completedLessons.length === getAllLessons(c).length;
     });
   }, [user, enrollments]);
+
+  const handleDownload = useCallback((courseTitle: string, courseId: string) => {
+    const name = user?.name || "Student";
+    const certId = `CERT-${courseId.padStart(4, "0")}`;
+    downloadCertificate(courseTitle, name, certId);
+  }, [user]);
 
   return (
     <div className="min-h-screen">
@@ -48,7 +119,7 @@ export default function CertificatesPage() {
                   <Award className="w-4 h-4 text-amber" />
                   <span>ID: CERT-{course.id.padStart(4, '0')}</span>
                 </div>
-                <Button variant="outline" size="sm" className="w-full">
+                <Button variant="outline" size="sm" className="w-full" onClick={() => handleDownload(course.title, course.id)}>
                   <Download className="w-4 h-4 mr-2" /> Download Certificate
                 </Button>
               </div>
