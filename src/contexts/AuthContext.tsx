@@ -50,14 +50,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem("skillup_enrollments", JSON.stringify(enrollments));
   }, [enrollments]);
 
-  const login = useCallback(async (email: string, _password: string): Promise<boolean> => {
-    // Mock login
-    setUser({ id: "1", name: email.split("@")[0], email, avatar: undefined });
+  const login = useCallback(async (email: string, password: string): Promise<boolean> => {
+    const usersRaw = localStorage.getItem("skillup_registered_users");
+    const users: { name: string; email: string; password: string }[] = usersRaw ? JSON.parse(usersRaw) : [];
+    const found = users.find(u => u.email === email && u.password === password);
+    if (!found) return false;
+    setUser({ id: "1", name: found.name, email: found.email, avatar: undefined });
     return true;
   }, []);
 
-  const register = useCallback(async (name: string, email: string, _password: string): Promise<boolean> => {
-    setUser({ id: "1", name, email, avatar: undefined });
+  const register = useCallback(async (name: string, email: string, password: string): Promise<boolean> => {
+    const usersRaw = localStorage.getItem("skillup_registered_users");
+    const users: { name: string; email: string; password: string }[] = usersRaw ? JSON.parse(usersRaw) : [];
+    if (users.find(u => u.email === email)) return false;
+    users.push({ name, email, password });
+    localStorage.setItem("skillup_registered_users", JSON.stringify(users));
     return true;
   }, []);
 

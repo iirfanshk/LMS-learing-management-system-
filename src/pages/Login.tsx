@@ -23,6 +23,8 @@ export default function LoginPage() {
     if (ok) {
       toast.success("Welcome back! 🎉");
       navigate("/dashboard");
+    } else {
+      toast.error("Invalid email or password");
     }
   };
 

@@ -25,8 +25,8 @@ export default function RegisterPage() {
     const ok = await register(name, email, password);
     setLoading(false);
     if (ok) {
-      toast.success("Welcome to SkillUp! 🎉");
-      navigate("/dashboard");
+      toast.success("Account created! Please log in. 🎉");
+      navigate("/login");
     }
   };
 
