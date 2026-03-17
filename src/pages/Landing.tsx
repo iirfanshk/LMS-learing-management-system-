@@ -4,7 +4,7 @@ import { CourseCard } from "@/components/CourseCard";
 import { Button } from "@/components/ui/button";
 import { courses } from "@/data/courses";
 import { motion } from "framer-motion";
-import { ArrowRight, BookOpen, Users, Star, Zap, Shield, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpen, Users, Star, Zap, Shield, TrendingUp, Compass } from "lucide-react";
 
 export default function LandingPage() {
   return (
