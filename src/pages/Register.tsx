@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { MascotBubble } from "@/components/MascotBubble";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -32,18 +31,18 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      <div className="absolute top-20 right-10 w-72 h-72 rounded-full opacity-30" style={{ background: "hsl(239, 84%, 90%)", filter: "blur(80px)" }} />
-      <div className="absolute bottom-20 left-10 w-60 h-60 rounded-full opacity-30" style={{ background: "hsl(38, 92%, 90%)", filter: "blur(80px)" }} />
+      <div className="absolute top-20 right-10 w-72 h-72 rounded-full opacity-20 dark:opacity-10" style={{ background: "hsl(262, 83%, 70%)", filter: "blur(80px)" }} />
+      <div className="absolute bottom-20 left-10 w-60 h-60 rounded-full opacity-20 dark:opacity-10" style={{ background: "hsl(38, 92%, 70%)", filter: "blur(80px)" }} />
 
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
-          <Link to="/" className="inline-flex items-center gap-2 mb-6">
-            <span className="text-3xl">📚</span>
-            <span className="font-display font-bold text-2xl text-gradient-primary">SkillUp Academy</span>
+          <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
+            <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-display font-bold text-xl">S</span>
+            </div>
+            <span className="font-display font-bold text-2xl text-gradient-primary">SkillForge</span>
           </Link>
         </div>
-
-        <MascotBubble mascot="cat" message="Join thousands of learners today! 🐱" animation="walk-right" size="lg" />
 
         <div className="glass-card-strong rounded-3xl p-8 space-y-6">
           <div>
@@ -54,21 +53,21 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
-              <Input id="name" placeholder="John Doe" value={name} onChange={e => setName(e.target.value)} />
+              <Input id="name" placeholder="John Doe" value={name} onChange={e => setName(e.target.value)} className="rounded-xl" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="email">Email</Label>
-              <Input id="email" type="email" placeholder="you@gmail.com" value={email} onChange={e => setEmail(e.target.value)} />
+              <Input id="email" type="email" placeholder="you@gmail.com" value={email} onChange={e => setEmail(e.target.value)} className="rounded-xl" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} />
+              <Input id="password" type="password" placeholder="••••••••" value={password} onChange={e => setPassword(e.target.value)} className="rounded-xl" />
             </div>
             <div className="space-y-2">
               <Label htmlFor="confirm">Confirm Password</Label>
-              <Input id="confirm" type="password" placeholder="••••••••" value={confirm} onChange={e => setConfirm(e.target.value)} />
+              <Input id="confirm" type="password" placeholder="••••••••" value={confirm} onChange={e => setConfirm(e.target.value)} className="rounded-xl" />
             </div>
-            <Button type="submit" className="w-full gradient-primary border-0 text-primary-foreground font-display font-semibold h-11" disabled={loading}>
+            <Button type="submit" className="w-full gradient-primary border-0 text-primary-foreground font-display font-semibold h-11 rounded-xl" disabled={loading}>
               {loading ? "Creating account..." : "Sign Up"}
             </Button>
           </form>
@@ -82,7 +81,7 @@ export default function RegisterPage() {
           <Button
             type="button"
             variant="outline"
-            className="w-full h-11 font-display font-semibold gap-3"
+            className="w-full h-11 font-display font-semibold gap-3 rounded-xl"
             onClick={() => toast.info("Google sign-in coming soon!")}
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">

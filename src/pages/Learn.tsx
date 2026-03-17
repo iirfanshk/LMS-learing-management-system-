@@ -4,8 +4,8 @@ import { getCourseBySlug, getAllLessons, formatDuration, type Lesson } from "@/d
 import { getStage } from "@/components/EmojiProgress";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { useState, useMemo, useCallback } from "react";
-import { Check, Lock, ChevronLeft, ChevronRight, ChevronDown, Play } from "lucide-react";
+import { useState, useMemo } from "react";
+import { Check, Lock, ChevronLeft, ChevronRight, ChevronDown, Play, BookOpen } from "lucide-react";
 import confetti from "canvas-confetti";
 
 export default function LearnPage() {
@@ -28,7 +28,9 @@ export default function LearnPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <p className="text-4xl mb-4">🐭</p>
+          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+            <BookOpen className="w-8 h-8 text-primary" />
+          </div>
           <p className="text-muted-foreground mb-4">Please enroll in this course first!</p>
           <Button onClick={() => navigate(course ? `/subjects/${course.slug}` : "/subjects")}>
             Go to Course
@@ -54,7 +56,7 @@ export default function LearnPage() {
 
   const handleMarkComplete = () => {
     completeLesson(course.id, activeLesson.id);
-    toast("🐭 Great job! Keep going! 🎉", { duration: 3000 });
+    toast("Great job! Keep going! 🎉", { duration: 3000 });
 
     const newCompleted = completedLessons.length + 1;
     if (newCompleted === totalLessons) {
@@ -153,7 +155,6 @@ export default function LearnPage() {
 
         {/* Main content */}
         <div className="flex-1 overflow-y-auto">
-          {/* Breadcrumb */}
           <div className="px-6 pt-4 flex items-center gap-2 text-xs text-muted-foreground">
             <Link to="/" className="hover:text-foreground">Home</Link>
             <span>/</span>
@@ -164,7 +165,6 @@ export default function LearnPage() {
             <span className="text-foreground">{activeLesson.title}</span>
           </div>
 
-          {/* Video player */}
           <div className="p-6">
             <div className="aspect-video rounded-2xl overflow-hidden bg-foreground/5 shadow-lg">
               <iframe
@@ -177,7 +177,6 @@ export default function LearnPage() {
               />
             </div>
 
-            {/* Lesson info */}
             <div className="mt-6 space-y-4">
               <h2 className="font-display font-bold text-xl text-foreground">{activeLesson.title}</h2>
               <p className="text-muted-foreground">{activeLesson.description}</p>
@@ -195,7 +194,6 @@ export default function LearnPage() {
                 )}
               </div>
 
-              {/* Navigation */}
               <div className="flex items-center justify-between pt-4 border-t">
                 <Button variant="outline" onClick={goPrev} disabled={activeLessonIndex === 0}>
                   <ChevronLeft className="w-4 h-4 mr-1" /> Previous

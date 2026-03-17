@@ -1,9 +1,8 @@
-import { MascotBubble } from "@/components/MascotBubble";
 import { Header } from "@/components/Header";
 import { useAuth } from "@/contexts/AuthContext";
 import { courses, getAllLessons } from "@/data/courses";
 import { useMemo, useCallback } from "react";
-import { Award, Download } from "lucide-react";
+import { Award, Download, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function downloadCertificate(courseName: string, userName: string, certId: string) {
@@ -12,11 +11,9 @@ function downloadCertificate(courseName: string, userName: string, certId: strin
   canvas.height = 800;
   const ctx = canvas.getContext("2d")!;
 
-  // Background
   ctx.fillStyle = "#ffffff";
   ctx.fillRect(0, 0, 1200, 800);
 
-  // Border
   ctx.strokeStyle = "#7c3aed";
   ctx.lineWidth = 8;
   ctx.strokeRect(30, 30, 1140, 740);
@@ -59,14 +56,15 @@ function downloadCertificate(courseName: string, userName: string, certId: strin
   ctx.fillText(`Date: ${new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}`, 600, 540);
   ctx.fillText(`Certificate ID: ${certId}`, 600, 580);
 
-  ctx.font = "60px serif";
-  ctx.fillText("🏆", 600, 680);
+  ctx.fillStyle = "#7c3aed";
+  ctx.font = "16px Georgia, serif";
+  ctx.fillText("SkillForge", 600, 640);
 
   ctx.fillStyle = "#7c3aed";
   ctx.fillRect(100, 720, 1000, 4);
 
   const link = document.createElement("a");
-  link.download = `certificate-${courseName.replace(/\s+/g, "-").toLowerCase()}.png`;
+  link.download = `skillforge-certificate-${courseName.replace(/\s+/g, "-").toLowerCase()}.png`;
   link.href = canvas.toDataURL("image/png");
   link.click();
 }
@@ -99,7 +97,10 @@ export default function CertificatesPage() {
 
         {completedCourses.length === 0 ? (
           <div className="max-w-md mx-auto glass-card rounded-2xl p-8 text-center">
-            <MascotBubble mascot="rat" message="No certificates yet! Complete a course to earn one. 📚" animation="bounce" />
+            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+              <BookOpen className="w-8 h-8 text-primary" />
+            </div>
+            <p className="text-muted-foreground">No certificates yet! Complete a course to earn one. 📚</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -111,7 +112,7 @@ export default function CertificatesPage() {
                   </div>
                   <div>
                     <h3 className="font-display font-semibold text-foreground">{course.title}</h3>
-                    <p className="text-xs text-muted-foreground">Prof. Cat 🐱</p>
+                    <p className="text-xs text-muted-foreground">{course.instructor}</p>
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground mb-4">Certificate of Completion</p>
@@ -119,7 +120,7 @@ export default function CertificatesPage() {
                   <Award className="w-4 h-4 text-amber" />
                   <span>ID: CERT-{course.id.padStart(4, '0')}</span>
                 </div>
-                <Button variant="outline" size="sm" className="w-full" onClick={() => handleDownload(course.title, course.id)}>
+                <Button variant="outline" size="sm" className="w-full rounded-xl" onClick={() => handleDownload(course.title, course.id)}>
                   <Download className="w-4 h-4 mr-2" /> Download Certificate
                 </Button>
               </div>

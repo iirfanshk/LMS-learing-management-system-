@@ -47,7 +47,7 @@ export const courses: Course[] = [
     thumbnail: "",
     category: "Programming",
     level: "Beginner",
-    instructor: "Prof. Cat 🐱",
+    instructor: "Dr. Sarah Chen",
     enrolledCount: 3240,
     rating: 4.8,
     reviewCount: 456,
@@ -91,7 +91,7 @@ export const courses: Course[] = [
     thumbnail: "",
     category: "Programming",
     level: "Beginner",
-    instructor: "Prof. Cat 🐱",
+    instructor: "Prof. Alex Kumar",
     enrolledCount: 5120,
     rating: 4.9,
     reviewCount: 892,
@@ -136,7 +136,7 @@ export const courses: Course[] = [
     thumbnail: "",
     category: "Data Science",
     level: "Intermediate",
-    instructor: "Prof. Cat 🐱",
+    instructor: "Dr. Priya Sharma",
     enrolledCount: 2890,
     rating: 4.7,
     reviewCount: 340,
@@ -180,7 +180,7 @@ export const courses: Course[] = [
     thumbnail: "",
     category: "Web Development",
     level: "Beginner",
-    instructor: "Prof. Cat 🐱",
+    instructor: "Angela Martinez",
     enrolledCount: 7650,
     rating: 4.9,
     reviewCount: 1230,
@@ -216,7 +216,7 @@ export const courses: Course[] = [
   {
     id: "5",
     slug: "data-structures",
-    title: "Data Structures",
+    title: "Data Structures & Algorithms",
     description: "Master essential data structures and algorithms. From arrays to graphs, with hands-on coding challenges and interview prep.",
     shortDescription: "Ace your coding interviews",
     price: 249,
@@ -224,7 +224,7 @@ export const courses: Course[] = [
     thumbnail: "",
     category: "Computer Science",
     level: "Intermediate",
-    instructor: "Prof. Cat 🐱",
+    instructor: "Prof. Raj Patel",
     enrolledCount: 4100,
     rating: 4.8,
     reviewCount: 567,
@@ -260,7 +260,7 @@ export const courses: Course[] = [
   {
     id: "6",
     slug: "system-design",
-    title: "System Design",
+    title: "System Design Masterclass",
     description: "Learn to design scalable systems. Cover low-level and high-level design, database choices, and API architecture used by top companies.",
     shortDescription: "Design systems like a senior engineer",
     price: 599,
@@ -268,7 +268,7 @@ export const courses: Course[] = [
     thumbnail: "",
     category: "Software Engineering",
     level: "Advanced",
-    instructor: "Prof. Cat 🐱",
+    instructor: "Vikram Singh",
     enrolledCount: 1980,
     rating: 4.7,
     reviewCount: 234,
@@ -297,6 +297,184 @@ export const courses: Course[] = [
           { id: "l6-7", title: "SQL vs NoSQL", order: 1, youtubeId: "ZS_kXvOeQ5Y", durationSeconds: 900, description: "Choose the right DB" },
           { id: "l6-8", title: "REST API Design", order: 2, youtubeId: "fgTGPa-fXoE", durationSeconds: 840, description: "Design great APIs" },
           { id: "l6-9", title: "System Design Interview", order: 3, youtubeId: "UzLMhqg3_Wc", durationSeconds: 1500, description: "Ace the interview" },
+        ]
+      },
+    ]
+  },
+  {
+    id: "7",
+    slug: "react-advanced",
+    title: "Advanced React Patterns",
+    description: "Master advanced React concepts including hooks, context, performance optimization, and modern architectural patterns for production apps.",
+    shortDescription: "Level up your React skills",
+    price: 449,
+    originalPrice: 899,
+    thumbnail: "",
+    category: "Web Development",
+    level: "Advanced",
+    instructor: "Angela Martinez",
+    enrolledCount: 2340,
+    rating: 4.8,
+    reviewCount: 312,
+    whatYouLearn: ["Custom hooks patterns", "Context & state management", "Performance optimization", "Server components", "Testing strategies"],
+    pastelColor: "hsl(195, 75%, 92%)",
+    isNew: true,
+    sections: [
+      {
+        id: "s7-1", title: "Advanced Hooks", order: 1,
+        lessons: [
+          { id: "l7-1", title: "useReducer Deep Dive", order: 1, youtubeId: "kK_Wqx3RnHk", durationSeconds: 1020, description: "Master useReducer" },
+          { id: "l7-2", title: "Custom Hooks", order: 2, youtubeId: "J-g9ZJha8FE", durationSeconds: 900, description: "Build reusable hooks" },
+          { id: "l7-3", title: "useRef & Forwarding Refs", order: 3, youtubeId: "t2ypzz6gJm0", durationSeconds: 840, description: "DOM refs and forwarding" },
+        ]
+      },
+      {
+        id: "s7-2", title: "State Management", order: 2,
+        lessons: [
+          { id: "l7-4", title: "Context API Patterns", order: 1, youtubeId: "5LrDIWkK_Bc", durationSeconds: 960, description: "Advanced context usage" },
+          { id: "l7-5", title: "Zustand & Jotai", order: 2, youtubeId: "KEc0LLQjyfQ", durationSeconds: 1080, description: "Modern state libraries" },
+          { id: "l7-6", title: "React Query", order: 3, youtubeId: "VtWkSCZX0Ec", durationSeconds: 1200, description: "Server state management" },
+        ]
+      },
+      {
+        id: "s7-3", title: "Performance", order: 3,
+        lessons: [
+          { id: "l7-7", title: "Memoization Strategies", order: 1, youtubeId: "DEPwA3mv_R8", durationSeconds: 900, description: "useMemo and useCallback" },
+          { id: "l7-8", title: "Code Splitting", order: 2, youtubeId: "JU6sl_yyZqs", durationSeconds: 780, description: "Lazy loading components" },
+          { id: "l7-9", title: "React Profiler", order: 3, youtubeId: "00RoZflFE34", durationSeconds: 840, description: "Debug performance" },
+        ]
+      },
+    ]
+  },
+  {
+    id: "8",
+    slug: "docker-kubernetes",
+    title: "Docker & Kubernetes",
+    description: "Learn containerization with Docker and orchestration with Kubernetes. Deploy microservices at scale with hands-on projects.",
+    shortDescription: "Master containers & orchestration",
+    price: 549,
+    originalPrice: 1099,
+    thumbnail: "",
+    category: "Cloud & DevOps",
+    level: "Intermediate",
+    instructor: "Vikram Singh",
+    enrolledCount: 1560,
+    rating: 4.7,
+    reviewCount: 198,
+    whatYouLearn: ["Docker fundamentals", "Docker Compose", "Kubernetes architecture", "Helm charts", "CI/CD pipelines"],
+    pastelColor: "hsl(210, 75%, 92%)",
+    sections: [
+      {
+        id: "s8-1", title: "Docker Basics", order: 1,
+        lessons: [
+          { id: "l8-1", title: "What is Docker?", order: 1, youtubeId: "31ieHmcTUOk", durationSeconds: 900, description: "Introduction to containers" },
+          { id: "l8-2", title: "Dockerfiles", order: 2, youtubeId: "WmcdMiyqfZs", durationSeconds: 1020, description: "Build custom images" },
+          { id: "l8-3", title: "Docker Compose", order: 3, youtubeId: "HG6yIjZapSA", durationSeconds: 1080, description: "Multi-container apps" },
+        ]
+      },
+      {
+        id: "s8-2", title: "Kubernetes Core", order: 2,
+        lessons: [
+          { id: "l8-4", title: "K8s Architecture", order: 1, youtubeId: "X48VuDVv0do", durationSeconds: 1200, description: "Kubernetes overview" },
+          { id: "l8-5", title: "Pods & Deployments", order: 2, youtubeId: "s_o8dwzRlu4", durationSeconds: 1080, description: "Core K8s objects" },
+          { id: "l8-6", title: "Services & Networking", order: 3, youtubeId: "T4Z7visMM4E", durationSeconds: 960, description: "K8s networking" },
+        ]
+      },
+      {
+        id: "s8-3", title: "Production K8s", order: 3,
+        lessons: [
+          { id: "l8-7", title: "Helm Charts", order: 1, youtubeId: "fy8SHvNZGeE", durationSeconds: 900, description: "Package management" },
+          { id: "l8-8", title: "CI/CD with K8s", order: 2, youtubeId: "wEDRfAz6_Uw", durationSeconds: 1080, description: "Automated deployments" },
+          { id: "l8-9", title: "Monitoring & Logging", order: 3, youtubeId: "QoDqxm7ybLc", durationSeconds: 1020, description: "Observability stack" },
+        ]
+      },
+    ]
+  },
+  {
+    id: "9",
+    slug: "cybersecurity-fundamentals",
+    title: "Cybersecurity Fundamentals",
+    description: "Learn the essentials of cybersecurity including network security, ethical hacking, cryptography, and security best practices.",
+    shortDescription: "Protect systems & networks",
+    price: 399,
+    originalPrice: 799,
+    thumbnail: "",
+    category: "Cybersecurity",
+    level: "Beginner",
+    instructor: "Dr. Sarah Chen",
+    enrolledCount: 1890,
+    rating: 4.6,
+    reviewCount: 267,
+    whatYouLearn: ["Network security basics", "Ethical hacking intro", "Cryptography fundamentals", "Web app security", "Security best practices"],
+    pastelColor: "hsl(0, 70%, 93%)",
+    sections: [
+      {
+        id: "s9-1", title: "Security Basics", order: 1,
+        lessons: [
+          { id: "l9-1", title: "Intro to Cybersecurity", order: 1, youtubeId: "z5nc9MDbvkw", durationSeconds: 780, description: "Security landscape overview" },
+          { id: "l9-2", title: "Network Security", order: 2, youtubeId: "E03gh1huvW4", durationSeconds: 960, description: "Protecting networks" },
+          { id: "l9-3", title: "Cryptography 101", order: 3, youtubeId: "jhXCTbFnK8o", durationSeconds: 1080, description: "Encryption basics" },
+        ]
+      },
+      {
+        id: "s9-2", title: "Ethical Hacking", order: 2,
+        lessons: [
+          { id: "l9-4", title: "Penetration Testing", order: 1, youtubeId: "3Kq1MIfTWCE", durationSeconds: 1200, description: "Pen testing methodology" },
+          { id: "l9-5", title: "Web App Vulnerabilities", order: 2, youtubeId: "WtHnT73NaaQ", durationSeconds: 1020, description: "OWASP Top 10" },
+          { id: "l9-6", title: "Social Engineering", order: 3, youtubeId: "lc7scxvKQOo", durationSeconds: 840, description: "Human factor attacks" },
+        ]
+      },
+      {
+        id: "s9-3", title: "Defense Strategies", order: 3,
+        lessons: [
+          { id: "l9-7", title: "Firewalls & IDS", order: 1, youtubeId: "kDEX1HXybrU", durationSeconds: 900, description: "Defense tools" },
+          { id: "l9-8", title: "Incident Response", order: 2, youtubeId: "n-USNMclpJE", durationSeconds: 1020, description: "Handling breaches" },
+          { id: "l9-9", title: "Security Audit", order: 3, youtubeId: "pL9q2lOZ1Fg", durationSeconds: 960, description: "Auditing systems" },
+        ]
+      },
+    ]
+  },
+  {
+    id: "10",
+    slug: "flutter-mobile-dev",
+    title: "Flutter Mobile Development",
+    description: "Build beautiful, natively compiled mobile apps for iOS and Android from a single codebase using Flutter and Dart.",
+    shortDescription: "Cross-platform mobile apps",
+    price: 449,
+    originalPrice: 899,
+    thumbnail: "",
+    category: "Mobile Development",
+    level: "Intermediate",
+    instructor: "Prof. Alex Kumar",
+    enrolledCount: 2100,
+    rating: 4.8,
+    reviewCount: 345,
+    whatYouLearn: ["Dart programming language", "Flutter widgets", "State management", "API integration", "App store deployment"],
+    pastelColor: "hsl(200, 80%, 92%)",
+    isNew: true,
+    sections: [
+      {
+        id: "s10-1", title: "Dart & Flutter Basics", order: 1,
+        lessons: [
+          { id: "l10-1", title: "Dart Language Tour", order: 1, youtubeId: "Ej_Pcr4uC2Q", durationSeconds: 900, description: "Learn Dart basics" },
+          { id: "l10-2", title: "Flutter Setup", order: 2, youtubeId: "1ukSR1GRtMU", durationSeconds: 720, description: "Set up Flutter environment" },
+          { id: "l10-3", title: "Widgets Deep Dive", order: 3, youtubeId: "bKueYVtV0eA", durationSeconds: 1080, description: "Understanding widgets" },
+        ]
+      },
+      {
+        id: "s10-2", title: "Advanced Flutter", order: 2,
+        lessons: [
+          { id: "l10-4", title: "State Management", order: 1, youtubeId: "3tm-R7ymwhc", durationSeconds: 1200, description: "Provider & Riverpod" },
+          { id: "l10-5", title: "Navigation & Routing", order: 2, youtubeId: "nyvwx7o277U", durationSeconds: 960, description: "App navigation" },
+          { id: "l10-6", title: "HTTP & APIs", order: 3, youtubeId: "c09XiwOZKsI", durationSeconds: 1020, description: "Fetch data from APIs" },
+        ]
+      },
+      {
+        id: "s10-3", title: "Production App", order: 3,
+        lessons: [
+          { id: "l10-7", title: "Firebase Integration", order: 1, youtubeId: "sfA3NWDBPZ4", durationSeconds: 1080, description: "Backend with Firebase" },
+          { id: "l10-8", title: "Animations", order: 2, youtubeId: "IVTjpW3W33s", durationSeconds: 900, description: "Beautiful animations" },
+          { id: "l10-9", title: "Deploy to Stores", order: 3, youtubeId: "g0GNuoCOtaQ", durationSeconds: 1200, description: "Publish your app" },
         ]
       },
     ]
