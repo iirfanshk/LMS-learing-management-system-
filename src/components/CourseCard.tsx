@@ -35,6 +35,9 @@ export function CourseCard({ course, showProgress = false, completed = false }: 
           {course.category === "Web Development" && "🌐"}
           {course.category === "Computer Science" && "🧮"}
           {course.category === "Software Engineering" && "⚙️"}
+          {course.category === "Cloud & DevOps" && "☁️"}
+          {course.category === "Cybersecurity" && "🔒"}
+          {course.category === "Mobile Development" && "📱"}
         </div>
         <div className="p-4 space-y-3">
           <div>

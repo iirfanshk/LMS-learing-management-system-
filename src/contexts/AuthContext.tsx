@@ -32,26 +32,26 @@ const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(() => {
-    const saved = localStorage.getItem("skillup_user");
+    const saved = localStorage.getItem("skillforge_user");
     return saved ? JSON.parse(saved) : null;
   });
 
   const [enrollments, setEnrollments] = useState<EnrollmentProgress[]>(() => {
-    const saved = localStorage.getItem("skillup_enrollments");
+    const saved = localStorage.getItem("skillforge_enrollments");
     return saved ? JSON.parse(saved) : [];
   });
 
   useEffect(() => {
-    if (user) localStorage.setItem("skillup_user", JSON.stringify(user));
-    else localStorage.removeItem("skillup_user");
+    if (user) localStorage.setItem("skillforge_user", JSON.stringify(user));
+    else localStorage.removeItem("skillforge_user");
   }, [user]);
 
   useEffect(() => {
-    localStorage.setItem("skillup_enrollments", JSON.stringify(enrollments));
+    localStorage.setItem("skillforge_enrollments", JSON.stringify(enrollments));
   }, [enrollments]);
 
   const login = useCallback(async (email: string, password: string): Promise<boolean> => {
-    const usersRaw = localStorage.getItem("skillup_registered_users");
+    const usersRaw = localStorage.getItem("skillforge_registered_users");
     const users: { name: string; email: string; password: string }[] = usersRaw ? JSON.parse(usersRaw) : [];
     const found = users.find(u => u.email === email && u.password === password);
     if (!found) return false;
@@ -60,19 +60,19 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const register = useCallback(async (name: string, email: string, password: string): Promise<boolean> => {
-    const usersRaw = localStorage.getItem("skillup_registered_users");
+    const usersRaw = localStorage.getItem("skillforge_registered_users");
     const users: { name: string; email: string; password: string }[] = usersRaw ? JSON.parse(usersRaw) : [];
     if (users.find(u => u.email === email)) return false;
     users.push({ name, email, password });
-    localStorage.setItem("skillup_registered_users", JSON.stringify(users));
+    localStorage.setItem("skillforge_registered_users", JSON.stringify(users));
     return true;
   }, []);
 
   const logout = useCallback(() => {
     setUser(null);
     setEnrollments([]);
-    localStorage.removeItem("skillup_user");
-    localStorage.removeItem("skillup_enrollments");
+    localStorage.removeItem("skillforge_user");
+    localStorage.removeItem("skillforge_enrollments");
   }, []);
 
   const enroll = useCallback((courseId: string) => {

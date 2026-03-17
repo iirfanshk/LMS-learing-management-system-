@@ -1,12 +1,11 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
-import { MascotBubble } from "@/components/MascotBubble";
 import { EmojiProgress } from "@/components/EmojiProgress";
 import { useAuth } from "@/contexts/AuthContext";
 import { getCourseBySlug, getTotalLessons, getTotalDuration, formatDuration } from "@/data/courses";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
-import { Clock, BookOpen, Users, Star, ChevronDown } from "lucide-react";
+import { Clock, BookOpen, Users, Star, ChevronDown, Zap } from "lucide-react";
 import { useState } from "react";
 
 export default function CourseDetail() {
@@ -128,7 +127,16 @@ export default function CourseDetail() {
               </div>
             )}
             <div className="glass-card rounded-2xl p-5">
-              <MascotBubble mascot="cat" message="You've got this! Every expert was once a beginner 💪" animation="float" />
+              <div className="flex items-center gap-3 mb-3">
+                <Zap className="w-5 h-5 text-primary" />
+                <h3 className="font-display font-semibold text-foreground">Why SkillForge?</h3>
+              </div>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>✓ Lifetime access</li>
+                <li>✓ Certificate of completion</li>
+                <li>✓ Learn at your own pace</li>
+                <li>✓ Curated video content</li>
+              </ul>
             </div>
           </div>
         </div>
