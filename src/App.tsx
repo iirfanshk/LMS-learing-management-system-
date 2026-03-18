@@ -16,7 +16,7 @@ import Learn from "./pages/Learn";
 import Certificates from "./pages/Certificates";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
-import NotFound from "./pages/NotFound";
+import Programs from "./pages/Programs";
 
 const queryClient = new QueryClient();
 
