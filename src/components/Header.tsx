@@ -94,9 +94,6 @@ export function Header() {
                   <DropdownMenuItem onClick={() => navigate("/certificates")} className="cursor-pointer">
                     <Award className="w-4 h-4 mr-2" /> Certificates
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate("/programs")} className="cursor-pointer">
-                    <Trophy className="w-4 h-4 mr-2" /> Programs
-                  </DropdownMenuItem>
                   <DropdownMenuSeparator />
                 </>
               )}
