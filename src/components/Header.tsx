@@ -23,6 +23,7 @@ import {
   LayoutDashboard,
   Menu,
   X,
+  Trophy,
 } from "lucide-react";
 import { useState } from "react";
 
