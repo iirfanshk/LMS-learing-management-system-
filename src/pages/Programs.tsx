@@ -271,7 +271,7 @@ export default function ProgramsPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         <div className="mb-8">
           <h1 className="font-display font-bold text-3xl text-foreground flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-accent" /> Programs & Competitions
+            <Trophy className="w-8 h-8 text-accent" /> Quizzes & Challenges
           </h1>
           <p className="text-muted-foreground mt-2">Test your skills, compete, and earn bragging rights!</p>
         </div>
