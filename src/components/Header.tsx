@@ -31,6 +31,7 @@ const navItems = [
   { label: "Home", to: "/", icon: Home },
   { label: "Browse", to: "/subjects", icon: Compass },
   { label: "Courses", to: "/dashboard", icon: BookOpen, auth: true },
+  { label: "Quizzes", to: "/programs", icon: Trophy, auth: true },
 ];
 
 export function Header() {
