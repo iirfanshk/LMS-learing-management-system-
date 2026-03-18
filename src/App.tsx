@@ -17,6 +17,7 @@ import Certificates from "./pages/Certificates";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Programs from "./pages/Programs";
+import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/subjects/:slug" element={<CourseDetail />} />
               <Route path="/subjects/:slug/learn" element={<Learn />} />
               <Route path="/certificates" element={<Certificates />} />
+              <Route path="/programs" element={<Programs />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/settings" element={<Settings />} />
               <Route path="*" element={<NotFound />} />
@@ -48,5 +50,4 @@ const App = () => (
     </ThemeProvider>
   </QueryClientProvider>
 );
-
 export default App;
