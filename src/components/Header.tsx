@@ -31,6 +31,7 @@ const navItems = [
   { label: "Home", to: "/", icon: Home },
   { label: "Browse", to: "/subjects", icon: Compass },
   { label: "Courses", to: "/dashboard", icon: BookOpen, auth: true },
+  { label: "Quizzes", to: "/programs", icon: Trophy, auth: true },
 ];
 
 export function Header() {
@@ -92,9 +93,6 @@ export function Header() {
                   </DropdownMenuItem>
                   <DropdownMenuItem onClick={() => navigate("/certificates")} className="cursor-pointer">
                     <Award className="w-4 h-4 mr-2" /> Certificates
-                  </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate("/programs")} className="cursor-pointer">
-                    <Trophy className="w-4 h-4 mr-2" /> Programs
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                 </>
@@ -187,9 +185,6 @@ export function Header() {
               </Link>
               <Link to="/certificates" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-muted-foreground hover:bg-muted/50">
                 <Award className="w-4 h-4" /> Certificates
-              </Link>
-              <Link to="/programs" onClick={() => setMobileOpen(false)} className="flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium text-muted-foreground hover:bg-muted/50">
-                <Trophy className="w-4 h-4" /> Programs
               </Link>
             </>
           )}

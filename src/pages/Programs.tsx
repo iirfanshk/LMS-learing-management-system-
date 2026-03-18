@@ -107,6 +107,82 @@ const programs: Program[] = [
       { id: "q5", question: "Which metric measures classification accuracy?", options: ["MSE", "R-squared", "F1 Score", "RMSE"], correct: 2 },
     ],
   },
+  {
+    id: "java-basics",
+    title: "Java Programming Basics",
+    description: "Core Java concepts — OOP, syntax, and data structures.",
+    category: "Programming",
+    difficulty: "Beginner",
+    duration: "15 min",
+    totalQuestions: 5,
+    passingScore: 60,
+    icon: <Zap className="w-6 h-6" />,
+    color: "from-orange-500 to-orange-400",
+    questions: [
+      { id: "q1", question: "Which keyword is used to create a class in Java?", options: ["class", "struct", "define", "object"], correct: 0 },
+      { id: "q2", question: "What is the default value of an int in Java?", options: ["null", "0", "undefined", "-1"], correct: 1 },
+      { id: "q3", question: "Which method is the entry point of a Java program?", options: ["start()", "run()", "main()", "init()"], correct: 2 },
+      { id: "q4", question: "What does JVM stand for?", options: ["Java Virtual Machine", "Java Variable Manager", "Java Version Module", "Java Visual Mode"], correct: 0 },
+      { id: "q5", question: "Which collection allows duplicate elements?", options: ["Set", "Map", "List", "HashSet"], correct: 2 },
+    ],
+  },
+  {
+    id: "sql-challenge",
+    title: "SQL & Database Challenge",
+    description: "Test your SQL queries and database design knowledge.",
+    category: "Database",
+    difficulty: "Intermediate",
+    duration: "20 min",
+    totalQuestions: 5,
+    passingScore: 70,
+    icon: <Target className="w-6 h-6" />,
+    color: "from-cyan-500 to-cyan-400",
+    questions: [
+      { id: "q1", question: "Which SQL clause is used to filter rows?", options: ["ORDER BY", "GROUP BY", "WHERE", "HAVING"], correct: 2 },
+      { id: "q2", question: "What does JOIN do in SQL?", options: ["Deletes rows", "Combines rows from two tables", "Creates a table", "Sorts data"], correct: 1 },
+      { id: "q3", question: "Which key uniquely identifies a row?", options: ["Foreign Key", "Primary Key", "Composite Key", "Index Key"], correct: 1 },
+      { id: "q4", question: "What does DISTINCT do?", options: ["Sorts results", "Removes duplicates", "Counts rows", "Groups data"], correct: 1 },
+      { id: "q5", question: "Which statement is used to update data?", options: ["MODIFY", "ALTER", "UPDATE", "CHANGE"], correct: 2 },
+    ],
+  },
+  {
+    id: "devops-essentials",
+    title: "DevOps & Cloud Essentials",
+    description: "Docker, CI/CD, cloud platforms, and infrastructure basics.",
+    category: "DevOps",
+    difficulty: "Advanced",
+    duration: "25 min",
+    totalQuestions: 5,
+    passingScore: 80,
+    icon: <Star className="w-6 h-6" />,
+    color: "from-violet-500 to-violet-400",
+    questions: [
+      { id: "q1", question: "What is Docker used for?", options: ["Database management", "Containerization", "Version control", "Code compilation"], correct: 1 },
+      { id: "q2", question: "What does CI/CD stand for?", options: ["Code Integration / Code Delivery", "Continuous Integration / Continuous Delivery", "Central Interface / Central Database", "Cloud Infrastructure / Cloud Deployment"], correct: 1 },
+      { id: "q3", question: "Which file defines a Docker image?", options: ["docker-compose.yml", "Dockerfile", "package.json", "config.yml"], correct: 1 },
+      { id: "q4", question: "What is Kubernetes used for?", options: ["Frontend testing", "Container orchestration", "Database backups", "Code linting"], correct: 1 },
+      { id: "q5", question: "Which AWS service runs serverless functions?", options: ["EC2", "S3", "Lambda", "RDS"], correct: 2 },
+    ],
+  },
+  {
+    id: "cybersecurity-basics",
+    title: "Cybersecurity Fundamentals",
+    description: "Network security, encryption, and common attack vectors.",
+    category: "Security",
+    difficulty: "Intermediate",
+    duration: "20 min",
+    totalQuestions: 5,
+    passingScore: 70,
+    icon: <Award className="w-6 h-6" />,
+    color: "from-red-500 to-red-400",
+    questions: [
+      { id: "q1", question: "What does HTTPS ensure?", options: ["Speed", "Encrypted communication", "SEO ranking", "Caching"], correct: 1 },
+      { id: "q2", question: "What is phishing?", options: ["A programming language", "A social engineering attack", "A firewall type", "A database technique"], correct: 1 },
+      { id: "q3", question: "What does a firewall do?", options: ["Encrypts data", "Filters network traffic", "Stores passwords", "Compresses files"], correct: 1 },
+      { id: "q4", question: "Which is a symmetric encryption algorithm?", options: ["RSA", "AES", "SHA-256", "MD5"], correct: 1 },
+      { id: "q5", question: "What is a DDoS attack?", options: ["Data theft", "Flooding a server with traffic", "SQL injection variant", "Password cracking"], correct: 1 },
+    ],
+  },
 ];
 
 export default function ProgramsPage() {
@@ -195,7 +271,7 @@ export default function ProgramsPage() {
       <div className="container mx-auto px-4 py-8 max-w-5xl">
         <div className="mb-8">
           <h1 className="font-display font-bold text-3xl text-foreground flex items-center gap-3">
-            <Trophy className="w-8 h-8 text-accent" /> Programs & Competitions
+            <Trophy className="w-8 h-8 text-accent" /> Quizzes & Challenges
           </h1>
           <p className="text-muted-foreground mt-2">Test your skills, compete, and earn bragging rights!</p>
         </div>
